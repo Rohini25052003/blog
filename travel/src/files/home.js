@@ -1,16 +1,19 @@
 import React from 'react';
 import '.././assets/css/styles.css';
+import Header from './header';
 // import './Home.css'; // Assuming you have a Home.css file for styles
 
 const Home = () => {
     return (
+        
         <section className="home" id="home">
+            <Header/>
             <img src="img/home1.jpeg" alt="imageeeee" className="home__img" />
             <div className="home__container container grid">
                 <div className="home__data">
                     <span className="home__data-subtitle">Discover your place</span>
                     <h1 className="home__data-title">Explore The <br /> Best <b>Beautiful <br /> Beaches</b></h1>
-                    <a href="#" className="button">Signup  </a>
+                    <a href="/signup" className="button">Signup  </a>
                 </div>
                 <div className="home__social">
                     <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="home__social-link">
@@ -24,10 +27,11 @@ const Home = () => {
                     </a>
                 </div>
                 <div className="home__info">
+                
                     <div>
                         <span className="home__info-title">Signin</span>
                         <a href="" className="button button--flex button--link home__info-button">
-                            More <i className="ri-arrow-right-line"></i>
+                            {/* More <i className="ri-arrow-right-line"></i> */}
                         </a>
                     </div>
                     <div className="home__info-overlay">

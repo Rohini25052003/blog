@@ -1,6 +1,5 @@
-// src/components/AuthPage.js
 import React, { useState } from 'react';
-import './signup.css'; // Assuming styles.css is in the same directory
+// import './signup.css';
 
 export const AuthPage = () => {
     const [isRegistering, setIsRegistering] = useState(true);
@@ -70,18 +69,25 @@ export const AuthPage = () => {
         }
     };
 
+    const handleSocialIconClick = () => {
+        setIsRegistering(false); // Show login form
+    };
+
     return (
         <div className="hero">
             <div className="form-box">
                 <div className="button-box">
-                    <div id="btn"></div>
+                    <div 
+                        className="btn" 
+                        style={{ transform: isRegistering ? 'translateX(100%)' : 'translateX(0)' }}
+                    ></div>
                     <button type="button" className="toggle-btn" onClick={() => setIsRegistering(false)}>Log In</button>
                     <button type="button" className="toggle-btn" onClick={() => setIsRegistering(true)}>Register</button>
                 </div>
                 <div className="social-icons">
-                    <img src="fb.png" alt="Facebook" />
-                    <img src="tw.png" alt="Twitter" />
-                    <img src="gp.png" alt="Google Plus" />
+                    <img src="img/fb.jpg" alt="Facebook" onClick={handleSocialIconClick} />
+                    <img src="img/tw.jpg" alt="Twitter" onClick={handleSocialIconClick} />
+                    <img src="img/gp.jpg" alt="Google Plus" onClick={handleSocialIconClick} />
                 </div>
                 {isRegistering ? (
                     <form id="register" className="input-group" onSubmit={handleRegister}>
@@ -131,7 +137,9 @@ export const AuthPage = () => {
                         <span>I agree to the terms & conditions</span>
                         <button type="submit" className="submit-btn">Register</button>
                     </form>
+                    
                 ) : (
+                    
                     <form id="login" className="input-group" onSubmit={handleLogin}>
                         <input
                             type="text"
@@ -161,5 +169,3 @@ export const AuthPage = () => {
         </div>
     );
 };
-
-
